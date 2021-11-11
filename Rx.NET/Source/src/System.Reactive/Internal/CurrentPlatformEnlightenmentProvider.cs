@@ -54,7 +54,7 @@ namespace System.Reactive.PlatformServices
                 }
             }
 
-#if WINDOWS
+#if WINDOWS_UWP
             if (t == typeof(IHostLifecycleNotifications))
             {
                 return (T)(object)new HostLifecycleNotifications();

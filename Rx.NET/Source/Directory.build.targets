@@ -15,7 +15,7 @@
     <DefineConstants>$(DefineConstants);HAS_WINRT;NO_CODE_COVERAGE_ATTRIBUTE;NO_SERIALIZABLE;CRIPPLED_REFLECTION;NO_THREAD;NO_TRACE;WINDOWS;NO_NULLABLE_ATTRIBUTES</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0.16299'">
-    <DefineConstants>$(DefineConstants);HAS_WINRT;WINDOWS;HAS_OS_XAML;LEGACY_WINRT;NO_NULLABLE_ATTRIBUTES</DefineConstants>
+    <DefineConstants>$(DefineConstants);WINDOWS_UWP;HAS_WINRT;WINDOWS;HAS_OS_XAML;LEGACY_WINRT;NO_NULLABLE_ATTRIBUTES</DefineConstants>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netcoreapp2.1'">
@@ -25,7 +25,10 @@
     <DefineConstants>$(DefineConstants);HAS_WINRT;HAS_WINFORMS;HAS_WPF;HAS_DISPATCHER;DESKTOPCLR</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="$(TargetFramework.StartsWith('net5.0-windows'))">
-    <DefineConstants>$(DefineConstants);HAS_WINRT;HAS_WINFORMS;HAS_WPF;HAS_DISPATCHER;DESKTOPCLR;WINDOWS;CSWINRT</DefineConstants>
+    <DefineConstants>$(DefineConstants);HAS_WINFORMS;HAS_WPF;HAS_DISPATCHER;DESKTOPCLR;WINDOWS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(TargetFramework.StartsWith('net5.0-windows10'))">
+    <DefineConstants>$(DefineConstants);WINDOWS_UWP;HAS_WINRT;CSWINRT</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net472' or '$(TargetFramework)' == 'uap10.0' or '$(TargetFramework)' == 'uap10.0.16299' or '$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netcoreapp2.1'">
